@@ -1,4 +1,4 @@
-package Controller;
+package whatap.example.cognitodemo.Security;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -9,12 +9,13 @@ import java.util.List;
 
 @Controller
 public class BasicController {
+
     @GetMapping("/")
-    public String home(Model model, Authentication authentication){
+    public String Home(Model model, Authentication authentication){
         if (authentication != null && authentication.isAuthenticated()) {
             String email = makeEmail(authentication);
             model.addAttribute("email", email);
-            return "logined";
+            return "result";
         }
         return "home";
     }
@@ -25,6 +26,4 @@ public class BasicController {
         String email = principal.substring(principalEmailIndex+6, principal.length()-2);
         return email;
     }
-
-
 }
