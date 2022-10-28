@@ -1,4 +1,4 @@
-package whatap.example.cognitodemo.Security;
+package whatap.example.cognitodemo.Controller;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
